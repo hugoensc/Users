@@ -14,15 +14,18 @@ namespace Users.Controllers
         //[HttpGet("[controller]/[action]/{data:double}")]
         public IActionResult Index(double data)
         {
-            var url = Url.Action("Metodo", "Users");
+            //var url = Url.Action("Metodo", "Users", new { age = 25, name = "Hugo" });
             //return View("Index", data);
             //return Content(url);
+            var url = Url.RouteUrl("Enrique", new { age = 28, name = "Hugo" });
             return Redirect(url);
         }
         
-        public IActionResult Metodo()
+        [HttpGet("[controller]/[action]", Name = "Enrique")]
+        public IActionResult Metodo(int age, String name)
         {
-            return View();
+            var data = $"Nombre: {name} Edad: {age}";
+            return View("Index", data);
         }
 
 
