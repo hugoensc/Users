@@ -11,11 +11,20 @@ namespace Users.Controllers
     //[Route("Usuarios/")]
     public class UsersController : Controller
     {
-        [HttpGet("[controller]/[action]/{data:double}")]
+        //[HttpGet("[controller]/[action]/{data:double}")]
         public IActionResult Index(double data)
         {
-            return View("Index", data);
+            var url = Url.Action("Metodo", "Users");
+            //return View("Index", data);
+            //return Content(url);
+            return Redirect(url);
         }
+        
+        public IActionResult Metodo()
+        {
+            return View();
+        }
+
 
         ////[HttpPost]
         ////[HttpGet]
