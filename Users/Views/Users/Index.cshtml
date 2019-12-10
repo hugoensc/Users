@@ -1,7 +1,9 @@
-﻿
+﻿@*Cuando se trabaja con modelos(objetos) se declara la palabra reservada model y se coloca la clase que se va ainstanciar*@
+@model String
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Usuarios @Model </h1>
+@* Quitamos la propiedad que esperaba la url @ViewData["id"] *@
 
