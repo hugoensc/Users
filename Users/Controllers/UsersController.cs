@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Users.Controllers
 {
-
-    [Route("/Nombre")]
+    //[Route("[controller]/")]
+    //[Route("[controller]/[action]")]
+    //[Route("Usuarios/")]
     public class UsersController : Controller
     {
-
         public IActionResult Index()
         {
             return View();
@@ -18,7 +18,11 @@ namespace Users.Controllers
 
         //[HttpPost]
         //[HttpGet]
-        [Route("/Nombre/Hugo")]
+        // Estas son las rutas que nuestra accion puede utlizar
+        [Route("/Usuarios/Hugo")]
+        //[Route("/Usuarios/Enrique/{data}")]
+        //[Route("[action]/{data}")]
+        [Route("[controller]/[action]/{data}/")]
         public IActionResult Index(string data, int age)
         {
             // Estos parametros se pasan por la url y son parametros
